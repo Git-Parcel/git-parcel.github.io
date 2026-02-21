@@ -1,0 +1,12 @@
+# IDEs
+.idea/
+.vscode/
+
+# AI Tools
+.lingma/
+.trae/
+
+node_modules/
+
+# Generated files
+/dist/
