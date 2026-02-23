@@ -1,9 +1,13 @@
-type $schema = {
-  $schema?: string
-}
+import { $schema } from './utils.ts'
 
 type ParcelFormat = {
+	/**
+	 * Parcel format ID
+	 */
   id: string
+	/**
+	 * Parcel format version
+	 */
   version: number
 }
 
@@ -42,41 +46,4 @@ export type ParcelMeta = $schema & {
    * @default false
    */
   includeEntity?: boolean
-}
-
-type ParcelPath = string
-
-export type RepoMeta = $schema & {
-  /**
-   * List of path to parcels, relative to this meta file
-   *
-   * ### Example
-   *
-   * Repo directory structure:
-   *
-   * ```
-   * repo/
-   * ├─ houses/
-   * │  ├─ alice_house/
-   * │  │  └─ *
-   * │  └─ bob_house/
-   * │     └─ *
-   * └─ common/
-   *    └─ bus_station/
-   *       └─ *
-   * ```
-   *
-   * You can write it like this:
-   *
-   * ```json
-   * {
-   *   "parcels": [
-   *     "houses/alice_house",
-   *     "houses/bob_house",
-   *     "common/bus_station"
-   *   ]
-   * }
-   * ```
-   */
-  parcels: string[]
 }

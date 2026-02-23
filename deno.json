@@ -3,7 +3,7 @@
     "vitepress": "deno run -A npm:vitepress",
     "docs:dev": "deno task vitepress dev docs",
     "docs:build": "deno task vitepress build docs",
-    "schema:build": "deno run -A scripts/schema/build.ts && deno fmt dist/*.schema.json",
+    "schema:build": "deno run -A scripts/build-schema.ts && deno fmt dist/schema",
     "lib:test": "deno test --parallel",
     "serve": "deno task vitepress serve docs",
     "check": "deno check scripts lib test",

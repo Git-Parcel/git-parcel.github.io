@@ -1,0 +1,7 @@
+{
+  "$schema": "../../dist/schemas/RepoMeta.json",
+  "parcels": [
+    "houses/alice_house",
+    "houses/bob_house"
+  ]
+}
