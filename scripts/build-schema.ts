@@ -19,6 +19,16 @@ const CONFIG: tsj.Config = {
   skipTypeCheck: true,
   sortProps: true,
   topRef: true,
+  additionalProperties: true,
+}
+
+const SCHEMA_CONFIG_OVERRIDES: Record<string, tsj.Config> = {
+  RepoMeta: {
+    additionalProperties: false,
+  },
+  ParcelMeta: {
+    additionalProperties: true,
+  },
 }
 
 function main() {
@@ -32,6 +42,9 @@ function main() {
       ...CONFIG,
       type: typeName,
       schemaId: getSchemaId(typeName),
+    }
+    if (typeName in SCHEMA_CONFIG_OVERRIDES) {
+      Object.assign(config, SCHEMA_CONFIG_OVERRIDES[typeName])
     }
 
     const generator = tsj.createGenerator(config)
