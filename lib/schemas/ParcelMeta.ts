@@ -79,19 +79,11 @@ export type ParcelMeta = $schema & {
    */
   mods?: Record<string, ModDependency>
   /**
-   * Whether to include blocks
-   *
-   * Default is `true`
-   *
-   * If `false`, the parcel will not save or load blocks, and existing block data will be cleared when saving.
-   */
-  includeBlock?: boolean
-  /**
    * Whether to include entities
    *
    * Default is `true`
    *
-   * If `false`, the parcel will not save or load entities, and existing entity data will be cleared when saving.
+   * If `false`, the parcel will not save or load entities, and existing entity data will be treated as redundant and will be cleaned up when saving.
    */
   includeEntity?: boolean
 }
