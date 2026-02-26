@@ -1,25 +1,25 @@
 {
   "$schema": "../../dist/schemas/ParcelMeta.json",
+  "custom_fields": {
+    "Wow": "This schema allows custom fields like this"
+  },
+  "dataVersion": 1536,
+  "description": "This is steve's house",
   "format": {
     "id": "parcel",
     "version": 1
   },
-  "dataVersion": 1536,
-  "size": [15, 12, 20],
+  "includeEntity": true,
   "mods": {
     "mod_1": "*",
     "mod_2": { "min": "1.0.0", "max": "2.0.0" },
     "mod_3": { "min": "1.0.0" },
     "mod_4": { "max": "1.0.0" }
   },
-  "includeEntity": true,
   "name": "Steve's House",
-  "description": "This is steve's house",
+  "size": [15, 12, 20],
   "tags": [
     "building",
     "house"
-  ],
-  "custom_fields": {
-    "Wow": "This schema allows custom fields like this"
-  }
+  ]
 }
