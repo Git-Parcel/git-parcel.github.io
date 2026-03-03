@@ -6,7 +6,7 @@ hero:
   name: Git-Parcel 设计草图
   text:
   tagline:
-  image: 
+  image:
   actions:
     - theme: brand
       text: 概述
