@@ -6,7 +6,7 @@ type ParcelPath = string
  * The meta file of a Git Parcel repository.
  *
  * This file:
- * 
+ *
  * - should be in the root directory of the repository.
  * - lists all the parcels in this repository.
  */
