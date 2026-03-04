@@ -14,6 +14,12 @@ let config: UserConfig = {
     math: true,
   },
   vite: {
+    server: {
+      allowedHosts: [
+        'git-parcel.github.io',
+        '.local',
+      ],
+    },
     resolve: {
       alias: {},
     },
