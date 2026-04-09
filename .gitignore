@@ -1,0 +1,26 @@
+node_modules/
+
+# IDEs
+.idea/
+.vscode/
+
+# Generated files
+/dist/
+**/.vitepress/cache/
+
+# dotenv
+.env
+.env.*
+!.env.example
+
+# Obsidian
+.obsidian/
+
+# AI tools
+/.ai/
+.clinerules/
+.cursorrules/
+.marscode/
+.lingma/
+.trae/
+.codebuddy/
