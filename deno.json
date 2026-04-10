@@ -1,0 +1,54 @@
+{
+	"tasks": {
+		"check": "deno check scripts",
+		"verify": "deno fmt --check && deno lint",
+		"build": "deno run -A scripts/build.ts"
+	},
+	"nodeModulesDir": "auto",
+	"imports": {
+		"@leawind/inventory": "jsr:@leawind/inventory@^0.19.4",
+		"@std/assert": "jsr:@std/assert@^1",
+		"commander": "npm:commander@^14.0.3",
+		"ts-json-schema-generator": "npm:ts-json-schema-generator@^2.9.0"
+	},
+	"lint": {
+		"include": [
+			"scripts/",
+			"src"
+		],
+		"rules": {
+			"exclude": [
+				"ban-types",
+				"no-explicit-any",
+				"no-import-prefix",
+				"require-await"
+			]
+		}
+	},
+	"fmt": {
+		"bracePosition": "sameLine",
+		"lineWidth": 80,
+		"newLineKind": "lf",
+		"nextControlFlowPosition": "sameLine",
+		"operatorPosition": "nextLine",
+		"proseWrap": "preserve",
+		"quoteProps": "asNeeded",
+		"semiColons": false,
+		"singleBodyPosition": "sameLine",
+		"useBraces": "always",
+		"useTabs": true,
+		"singleQuote": true,
+		"spaceAround": false,
+		"spaceSurroundingProperties": true,
+		"trailingCommas": "onlyMultiLine",
+		"typeLiteral.separatorKind": "semiColon",
+		"include": [
+			"**/*.md",
+			"**/*.json",
+			".github/",
+			"scripts/",
+			"src"
+		],
+		"exclude": []
+	}
+}
