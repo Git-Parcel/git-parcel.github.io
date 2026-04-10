@@ -3,6 +3,7 @@ import { Path } from '@leawind/inventory/fs'
 import { INPUT, OUTPUT, OUTPUT_KEEP } from './env.ts'
 import { Schema } from 'ts-json-schema-generator'
 import { SchemaUtils } from './lib/schemas.ts'
+import { redirect } from './lib/redirect.ts'
 
 // Clean output directory
 if (await fs.exists(OUTPUT)) {
@@ -26,6 +27,17 @@ if (await fs.exists(OUTPUT)) {
 // Copy static files
 {
 	fs.copySync(INPUT.join('copied'), OUTPUT)
+}
+
+// Redirect urls
+{
+	const CONFIG = {
+		'index.html': '/docs/',
+		'404.html': '/docs/404',
+	}
+	for (const [file, target] of Object.entries(CONFIG)) {
+		redirect(OUTPUT.join(file), target)
+	}
 }
 
 // Build schemas
