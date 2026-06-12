@@ -5,13 +5,14 @@ export type Options = {
 	target: string
 }
 
-export function redirect(file: PathLike, target: string) {
-	Path.from(file).writeSync(`<!DOCTYPE html>
+export function redirect(root: PathLike, file: PathLike, target: string) {
+	Path.from(root).join(file)
+		.writeSync(`<!DOCTYPE html>
 <html lang="en-US">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="refresh" content="0; url=${target}" />
-		<title>Redirecting</title>
+		<title>Redirecting from ${file}</title>
 		<script>
 			location.href = '${target}'
 		</script>

@@ -36,7 +36,7 @@ if (await fs.exists(OUTPUT)) {
 		'404.html': '/docs/404',
 	}
 	for (const [file, target] of Object.entries(CONFIG)) {
-		redirect(OUTPUT.join(file), target)
+		redirect(OUTPUT, file, target)
 	}
 }
 
